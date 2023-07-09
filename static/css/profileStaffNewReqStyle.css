@@ -1,0 +1,117 @@
+:root {
+  --bg-Main: #fff;
+  --bg-Second: #2b4162;
+  --bg-Third: #aad2fc;
+  --btn-Success: #34d6b3;
+  --btn-Warning: #ba2c46;
+}
+
+#wrapperTotalMenuForProfile {
+  width: 100%;
+  margin: 6rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#wrapperMenu {
+  width: 90%;
+  height: 4rem;
+  background-color: var(--bg-Second);
+  box-shadow: 0 0.5px 5px rgba(128, 128, 128, 0.763);
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  align-items: center;
+  /* border-radius: 30% 30% 0 0; */
+}
+#wrapperMenu a {
+  color: var(--bg-Main);
+  text-decoration: none;
+}
+#wrapperMenu a:hover {
+  color: var(--bg-Third);
+}
+
+#wrapperBodyOfInfo {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(219, 219, 219);
+  box-shadow: 0 0.5px 5px rgba(128, 128, 128, 0.763);
+  text-align: justify;
+  line-height: 2.5rem;
+  padding: 2rem 0 2rem 0;
+}
+
+.mySlides {
+  width: 80%;
+  height: 27rem;
+  background-color: var(--bg-Main);
+  box-shadow: 0 0.5px 5px gray;
+  display: none;
+}
+.wrapperRows {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem 0 5rem;
+}
+.wrapperRowsLast {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapperRowsLast a {
+  background-color: var(--btn-Success);
+  border: 1.5px solid var(--btn-Success);
+  text-decoration: none;
+  color: var(--bg-Second);
+  padding: 0.3rem 3rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 0.5px 5px gray;
+  transition: 0.3s;
+}
+.wrapperRowsLast a:hover {
+  background-color: transparent;
+  color: var(--btn-Success);
+  transition: 0.3s;
+}
+
+#arrowRight {
+  width: 2%;
+  transform: rotateZ(90deg);
+  cursor: pointer;
+}
+
+#arrowLeft {
+  width: 2%;
+  transform: rotateZ(270deg);
+  cursor: pointer;
+}
+
+.btnStyles {
+  background-color: var(--btn-Success);
+  font-family: "IranSans";
+  border: none;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5px 5px gray;
+}
+#acceptBtn {
+  margin: 0 0 0 1rem;
+}
+.seeMoreBtn {
+  background-color: var(--btn-Warning);
+  color: var(--bg-Main);
+  margin: 0 1rem 0 0;
+}
+.hiddenInfo {
+  opacity: 0%;
+}

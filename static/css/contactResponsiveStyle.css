@@ -1,0 +1,42 @@
+@media screen and (max-width: 1273px) {
+  #wrapperOfContextContact {
+    width: 40%;
+    height: 80vh;
+  }
+  #contactPic {
+    width: 57%;
+    height: 80vh;
+  }
+}
+
+@media screen and (max-width: 1048px) {
+  #wrapperOfContextContact {
+    width: 47%;
+    height: 72vh;
+  }
+  #contactPic {
+    width: 50%;
+    height: 72vh;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #contactPic {
+    display: none;
+  }
+  #wrapperOfContextContact {
+    width: 100%;
+    height: 95vh;
+    border-radius: 1.5rem;
+  }
+  #phonePic {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 422px) {
+  #wrapperOfContextContact {
+    font-size: 0.8rem;
+    width: 100%;
+  }
+}

@@ -1,0 +1,178 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-Main: #fff;
+  --bg-Second: #2b4162;
+  --bg-Third: #aad2fc;
+  --btn-Success: #34d6b3;
+  --btn-Warning: #ba2c46;
+}
+
+@font-face {
+  font-family: IranSans;
+  src: url(../font/IranSans/IRANSansWeb\(FaNum\).ttf);
+  src: url(../font/IranSans/IRANSansWeb\(FaNum\)_Bold.ttf);
+  src: url(../font/IranSans/IRANSansWeb\(FaNum\)_Light.ttf);
+}
+
+body {
+  background-color: var(--bg-Main);
+  font-family: "IranSans";
+}
+
+#headerPart {
+  position: fixed;
+  background-color: var(--bg-Main);
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menuIcon {
+  cursor: pointer;
+  display: none;
+  margin: 0 1rem 0 0;
+  width: 2.3rem;
+}
+#menuPart {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#menuPart li {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#menuPart li a {
+  text-decoration: none;
+  color: var(--bg-Second);
+  font-weight: bold;
+}
+
+.rec {
+  background-color: var(--bg-Second);
+  width: 0%;
+  height: 0.2rem;
+  border-radius: 1rem;
+}
+
+#leftPartOfHeader {
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#userIcon {
+  background-color: var(--bg-Third);
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  box-shadow: 0 0.5px 5px rgba(0, 0, 0, 0.248);
+  border: 2px solid var(--bg-Third);
+  transition: 0.5s;
+  display: none;
+}
+#userIcon:hover {
+  background-color: transparent;
+  transition: 0.5s;
+}
+
+#btnSignIn {
+  border-radius: 0.6rem;
+  padding: 0.8rem 2.5rem;
+  text-decoration: none;
+  background-color: var(--bg-Third);
+  box-shadow: 0 0.5px 5px rgba(0, 0, 0, 0.248);
+  cursor: pointer;
+  color: var(--bg-Second);
+  border: 2px solid var(--bg-Third);
+  transition: 0.5s;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#btnSignIn:hover {
+  background-color: transparent;
+  transition: 0.5s;
+}
+
+#logoPart {
+  cursor: pointer;
+  width: 5rem;
+}
+
+#wrapperSideMenu {
+  right: -47vw;
+  width: 43vw;
+  position: fixed;
+  z-index: 4;
+  top: 0rem;
+  background-color: var(--bg-Second);
+  border-radius: 0 0 0 0.5rem;
+  height: 26.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 0.5px 5px rgba(128, 128, 128, 0.744);
+}
+
+#sideMenu {
+  width: 100%;
+  list-style-type: none;
+}
+
+#sideMenu a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-Second);
+  width: 100%;
+  padding: 2rem 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--bg-Main);
+}
+#sideMenu a:hover {
+  font-weight: bold;
+}
+
+#wrapperOfFooter {
+  width: 100%;
+  margin: 15rem 0 0 0;
+  display: flex;
+}
+
+#footerPart {
+  width: 100%;
+}
+#wrapperOfContentFooter {
+  margin: 10rem 0 0 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  color: var(--bg-Main);
+  z-index: 3;
+}
+#wrapperOfFooterInfo {
+  width: 30%;
+}
+#wrapperOfFooterPic {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}

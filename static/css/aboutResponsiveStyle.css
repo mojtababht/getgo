@@ -1,0 +1,23 @@
+:root {
+  --bg-Main: #fff;
+  --bg-Second: #2b4162;
+  --bg-Third: #aad2fc;
+  --btn-Success: #34d6b3;
+  --btn-Warning: #ba2c46;
+}
+@media screen and (max-width: 1264px) {
+  #wrapperOfAboutText {
+    margin: 0;
+    width: 80%;
+    background-color: #aad2fcac;
+    border-radius: 1rem;
+    padding: 1rem 1rem;
+  }
+}
+
+@media screen and (max-width: 386px) {
+  #wrapperOfAboutText {
+    font-size: 0.8rem;
+    width: 98%;
+  }
+}

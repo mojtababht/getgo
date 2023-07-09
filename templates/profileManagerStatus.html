@@ -1,0 +1,58 @@
+{% extends 'base.html' %} {% load static %} {% block linkContent %}
+<link
+  rel="stylesheet"
+  href="{% static 'css/profileManagerStatusStyle.css' %}"
+/>
+<link
+  rel="stylesheet"
+  href="{% static 'css/profileStatusResponsiveStyle.css' %}"
+/>
+{% endblock linkContent %}
+<span></span>
+{% block titleContent %}profile{% endblock titleContent %}
+<span></span>
+{% block mainContent %}
+<div id="wrapperTotalMenuForProfile">
+  <ul id="wrapperMenu">
+    <a href="{% url 'profileManagerInfo' %}"><li>اطلاعات کاربری</li></a>
+    <a href="{% url 'profileManagerStatus' %}" style="color: #aad2fc"
+      ><li>وضعیت درخواست</li></a
+    >
+    <a href="{% url 'profileManagerVol' %}"><li>داوطلبان مجموعه</li></a>
+    <a href="{% url 'logout' %}" style="color: #ba2c46"><li>خروج</li></a>
+  </ul>
+  <div id="wrapperBodyOfInfo">
+    <table id="wraperTableOfStatus">
+      <tr>
+        <th>شماره درخواست</th>
+        <th>نام مشتری</th>
+        <th>نام پیک</th>
+        <th>تاریخ درخواست</th>
+        <th>وضعیت بسته</th>
+      </tr>
+
+      
+      {% for request in requests %}
+        
+      
+      <tr>
+        <td>{{request.id}}</td>
+        <td>{{request.user.last_name}}</td>
+        <td>{{request.driver.last_name}}</td>
+        <td>{{request.req_date}}</td>
+        
+        {% if request.sended %}
+        <td class="successMessage">ارسال با موفقیت</td>
+          
+        {% else %}
+        <td class="unsuccessMessage">در مسیر</td>
+
+        {% endif %}
+          
+      </tr>
+      {% endfor %}
+      
+    </table>
+  </div>
+</div>
+{% endblock mainContent %}

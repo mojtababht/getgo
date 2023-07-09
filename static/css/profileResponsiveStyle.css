@@ -1,0 +1,8 @@
+@media screen and (max-width: 340px) {
+  #wrapperBodyOfInfo {
+    font-size: 0.7rem;
+  }
+  #wrapperMenu a {
+    font-size: 0.7rem;
+  }
+}

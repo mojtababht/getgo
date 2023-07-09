@@ -1,0 +1,82 @@
+:root {
+  --bg-Main: #fff;
+  --bg-Second: #2b4162;
+  --bg-Third: #aad2fc;
+  --btn-Success: #34d6b3;
+  --btn-Warning: #ba2c46;
+}
+
+#wrapperTotalFormDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 70rem;
+  width: 100%;
+  margin: 7rem 0 0 0;
+}
+
+.wrapperRows {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#profileImage {
+  width: 20%;
+  height: 22rem;
+  border-radius: 2rem;
+}
+#licenseImage {
+  width: 60%;
+  height: 22rem;
+  border-radius: 2rem;
+}
+.textOfContent {
+  width: 23%;
+  color: var(--bg-Second);
+}
+.wrapperRowsLast {
+  width: 90%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.textOfContentLast {
+  color: var(--bg-Second);
+  width: 90%;
+  text-align: justify;
+}
+form {
+  width: 40%;
+}
+.btnStyles {
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1.2rem 0;
+  cursor: pointer;
+  box-shadow: 0 0.5px 5px gray;
+  font-family: "IranSans";
+  color: var(--bg-Second);
+}
+
+#submitBtn {
+  border: 1.5px solid var(--btn-Success);
+  background-color: var(--btn-Success);
+  transition: 0.3s;
+}
+#submitBtn:hover {
+  background-color: transparent;
+  transition: 0.3s;
+}
+#denyBtn {
+  border: 1.5px solid var(--btn-Warning);
+  background-color: var(--btn-Warning);
+  transition: 0.3s;
+}
+#denyBtn:hover {
+  background-color: transparent;
+  transition: 0.3s;
+}

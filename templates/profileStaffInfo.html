@@ -1,0 +1,59 @@
+{% extends 'base.html' %} {% load static %} {% block linkContent %}
+<link rel="stylesheet" href="{% static 'css/profileStaffInfoStyle.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'css/profileStaffInfoResponsiveStyle.css' %}"
+/>
+{% endblock linkContent %}
+<span></span>
+{% block titleContent %}profile{% endblock titleContent %}
+<span></span>
+{% block mainContent %}
+<div id="wrapperTotalMenuForProfile">
+  <ul id="wrapperMenu">
+    <a href="{% url 'profileStaff' %}"><li>معرفی</li></a>
+    <a href="{% url 'profileStaffStatus' %}"><li>وضعیت درخواست</li></a>
+    <a href="{% url 'profileStaffInfo' %}" style="color: #aad2fc"
+      ><li>اطلاعات کاربری</li></a
+    >
+    <a href="{% url 'profileStaffNewReq' %}"><li>درخواست جدید</li></a>
+    <a hhref="{% url 'logout' %}" style="color: #ba2c46"><li>خروج</li></a>
+  </ul>
+  <form id="wrapperBodyOfInfo" method="post">
+    {% csrf_token %}
+    <div class="wrapperRows">
+      <div class="wrapperInputs">
+        <label>نام</label>
+        <input
+          type="text"
+          class="inputStyle"
+          name="first_name"
+          value="{{ user.first_name }}"
+        />
+      </div>
+      <div class="wrapperInputs">
+        <label>نام خانوادگی</label>
+        <input
+          type="text"
+          class="inputStyle"
+          name="last_name"
+          value="{{ user.last_name }}"
+        />
+      </div>
+    </div>
+    <div class="wrapperRows">
+      <div class="wrapperInputs">
+        <label>تلفن همراه</label>
+        <input type="text" class="inputStyle" value='{{ user.phone_no }}'/>
+      </div>
+      <div class="wrapperInputs">
+        <label>ایمیل</label>
+        <input type="email" class="inputStyle" name="email" value='{{ user.driverinfo.email }}'/>
+      </div>
+    </div>
+    <div class="wrapperbutton">
+      <button type="submit" id="saveChangesBtn">ثبت تغییرات</button>
+    </div>
+  </form>
+</div>
+{% endblock mainContent %}

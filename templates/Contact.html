@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% load static %} {% block linkContent %}
+<link rel="stylesheet" href="{% static 'css/contactStyle.css' %}" />
+<link rel="stylesheet" href="{% static 'css/contactResponsiveStyle.css' %}" />
+{% endblock linkContent %}
+<span></span>
+{% block titleContent %}Contact{% endblock titleContent %}
+<span></span>
+{% block mainContent %}
+<div id="wrapperTotal">
+  <div id="wrapperOfContactContent">
+    <img src="{% static 'image/contact.jpg' %}" id="contactPic" />
+    <div id="wrapperOfContextContact">
+      <img src="{% static 'image/phone.jpg' %}" id="phonePic" />
+      <div class="wrapperEachBox">
+        <h2>تماس با ما</h2>
+        <p>تلفن پشتیبانی : 91079550 - 021</p>
+        <p>فکس : 89774788 - 021</p>
+        <p>پست الکترونیک : info@getgo.cab</p>
+      </div>
+      <div class="wrapperEachBox">
+        <h2>دفتر امور رانندگان پیک و مشتریان</h2>
+        <p>شماره تماس : 91079550 - 021</p>
+        <p>خدمات مربوط به مشتریان به صورت غیر حضوری عرضه میشود .</p>
+      </div>
+      <div class="wrapperEachBox">
+        <h2>دفتر گت گات در تهران</h2>
+        <p>خیابان سازمان آب نرسیده به آیت الله کاشانی</p>
+        <p>پلاک 265</p>
+        <p>تلفن پشتیبانی : 96642 - 021</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock mainContent %}

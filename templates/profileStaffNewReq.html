@@ -1,0 +1,85 @@
+{% extends 'base.html' %} {% load static %} {% block linkContent %}
+<link rel="stylesheet" href="{% static 'css/profileStaffNewReqStyle.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'css/profileStaffNewReqResponsiveStyle.css' %}"
+/>
+{% endblock linkContent %}
+<span></span>
+{% block titleContent %}profile{% endblock titleContent %}
+<span></span>
+{% block mainContent %}
+<div id="wrapperTotalMenuForProfile">
+  <ul id="wrapperMenu">
+    <a href="{% url 'profileStaff' %}"><li>معرفی</li></a>
+    <a href="{% url 'profileStaffStatus' %}"><li>وضعیت درخواست</li></a>
+    <a href="{% url 'profileStaffInfo' %}"><li>اطلاعات کاربری</li></a>
+    <a href="{% url 'profileStaffNewReq' %}" style="color: #aad2fc"
+      ><li>درخواست جدید</li></a
+    >
+    <a href="{% url 'logout' %}" style="color: #ba2c46"><li>خروج</li></a>
+  </ul>
+  <div id="wrapperBodyOfInfo">
+    <img
+      src="{% static 'image/up-arrow-svgrepo-com (1).svg' %}"
+      id="arrowRight"
+      onclick="plusDivs(1)"
+    />
+
+    {% for request in requests %}
+
+    <div class="mySlides styleOfSlider" id="mySlide{{request.id}}">
+      <h3 style="display: flex">
+        درخواست
+        <p class="index"></p>
+      </h3>
+      <div class="wrapperRows">
+        <p>مبدا : {{ request.sAddress }}</p>
+        <p>مقصد : {{ request.dAddress }}</p>
+      </div>
+      <div class="wrapperRows">
+        <p>نوع ارسال : {{ request.get_type }}</p>
+        <p>اندازه بسته : متوسط</p>
+      </div>
+
+      <!-- Should be show when see more btn click -->
+      <div class="wrapperRows hiddenInfo" id="wrapperUserInfo{{request.id}}">
+        <p>نام مشتری : {{request.user}}</p>
+        <p>تلفن همراه : {{request.user.phone_no}}</p>
+      </div>
+      <div class="wrapperRowsLast hiddenInfo" id="wrapperAdr{{request.id}}">
+        <p>آدرس مبدا : {{request.sAddress.formated}}<br>آدرس مقصد : {{request.dAddress.formated}}</p>
+      </div>
+      
+      <!-- ------------------------------------------------- -->
+      <div class="wrapperRowsLast">
+        <p>قیمت : {{ request.price }} هزارتومان</p>
+      </div>
+      <div class="wrapperRowsLast">
+        <form method="post" action="{% url 'reqaccept' request.id %}">
+          {% csrf_token %}
+          <button type="submit" class="btnStyles" id="acceptBtn">
+            پذیرفتن
+          </button>
+        </form>
+        <button
+          class="btnStyles seeMoreBtn"
+          id="seeMoreBtn{{request.id}}"
+          onclick="showMoreInfo('wrapperUserInfo{{request.id}}' , 'wrapperAdr{{request.id}}' , 'mySlide{{request.id}}','seeMoreBtn{{request.id}}')"
+        >
+          مشاهده بیشتر
+        </button>
+      </div>
+    </div>
+    {% endfor %}
+
+    <img
+      src="{% static 'image/up-arrow-svgrepo-com (1).svg' %}"
+      id="arrowLeft"
+      onclick="plusDivs(-1)"
+    />
+  </div>
+</div>
+{% endblock mainContent %} {% block scriptContent %}
+<script src="{% static 'JS/staffReq.js' %}"></script>
+{% endblock scriptContent %}

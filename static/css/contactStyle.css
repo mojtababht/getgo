@@ -1,0 +1,53 @@
+:root {
+  --bg-Main: #fff;
+  --bg-Second: #2b4162;
+  --bg-Third: #aad2fc;
+  --btn-Success: #34d6b3;
+  --btn-Warning: #ba2c46;
+}
+
+#wrapperTotal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#wrapperOfContactContent {
+  width: 97%;
+  margin: 7rem 0 0 0;
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#contactPic {
+  width: 60%;
+  height: 85vh;
+  box-shadow: 0 0.5px 5px gray;
+  border-radius: 0 1.5rem 1.5rem 0;
+}
+
+#wrapperOfContextContact {
+  width: 36%;
+  height: 85vh;
+  border-radius: 1.5rem 0 0 1.5rem;
+  border: 5px solid #aad2fc;
+  box-shadow: 0 0.5px 5px gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.wrapperEachBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--bg-Second);
+  text-align: justify;
+}
+#phonePic {
+  width: 5rem;
+  border-radius: 50%;
+  box-shadow: 0 0.5px 5px gray;
+  display: none;
+}

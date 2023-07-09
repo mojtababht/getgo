@@ -1,0 +1,31 @@
+@media screen and (max-width: 975px) {
+  .wrapperRows {
+    flex-direction: column;
+    height: 35%;
+  }
+  .wrapperInputs {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 488px) {
+  .wrapperInputs {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+  .inputStyle {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .inputStyle {
+    height: 2.5rem;
+    border-radius: 10rem;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  #wrapperMenu a {
+    font-size: 0.7rem;
+  }
+}

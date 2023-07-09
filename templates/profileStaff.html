@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% load static %} {% block linkContent %}
+<link rel="stylesheet" href="{% static 'css/profileStaffStyle.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'css/profileStaffResponsiveStyle.css' %}"
+/>
+{% endblock linkContent %}
+<span></span>
+{% block titleContent %}Home{% endblock titleContent %}
+<span></span>
+{% block mainContent %}
+<div id="wrapperTotalMenuForProfile">
+  <ul id="wrapperMenu">
+    <a href="{% url 'profileStaff' %}" style="color: #aad2fc"><li>معرفی</li></a>
+    <a href="{% url 'profileStaffStatus' %}"><li>وضعیت درخواست</li></a>
+    <a href="{% url 'profileStaffInfo' %}"><li>اطلاعات کاربری</li></a>
+    <a href="{% url 'profileStaffNewReq' %}"><li>درخواست جدید</li></a>
+    <a href="{% url 'logout' %}" style="color: #ba2c46"><li>خروج</li></a>
+  </ul>
+  <div id="wrapperBodyOfInfo">
+    <h3 id="wrapperHead">کاربر گرامی ، {{ user.first_name }} خوش آمدید !</h3>
+    <p id="wrapperTotalText">
+      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
+      طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+      که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با
+      هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته
+      حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها
+      شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ
+    </p>
+  </div>
+</div>
+{% endblock mainContent %}

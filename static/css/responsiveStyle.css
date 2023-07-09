@@ -1,0 +1,190 @@
+@media screen and (max-width: 1190px) {
+  .picOfFooter {
+    width: 8rem;
+  }
+  #wrapperOfContentFooter {
+    margin: 8rem 0 0 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #btnSignIn {
+    padding: 0.7rem 1.5rem;
+  }
+
+  #logoPart {
+    width: 4rem;
+  }
+}
+
+@media screen and (max-width: 1010px) {
+  .picOfFooter {
+    width: 5rem;
+  }
+  #wrapperOfContentFooter {
+    margin: 7rem 0 0 0;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #menuPart {
+    display: none;
+  }
+
+  #leftPartOfHeader {
+    width: 30%;
+  }
+  #menuIcon {
+    display: block;
+    width: 2rem;
+  }
+  #bannerPic {
+    width: 60%;
+    height: 70%;
+  }
+  #wrapperOfBannerText {
+    height: 70%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+}
+@media screen and (max-width: 759px) {
+  .picOfFooter {
+    width: 5rem;
+  }
+  #wrapperOfContentFooter {
+    margin: 5rem 0 0 0;
+  }
+}
+@media screen and (max-width: 755px) {
+  #btnSignIn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  #menuIcon {
+    display: block;
+    width: 1.7rem;
+  }
+  #bannerPic {
+    width: 50%;
+    height: 60%;
+  }
+  #wrapperOfBannerText {
+    height: 60%;
+  }
+}
+
+@media screen and (max-width: 634px) {
+  #leftPartOfHeader {
+    width: 35%;
+  }
+  #bannerPic {
+    width: 50%;
+    height: 50%;
+  }
+  #wrapperOfBannerText {
+    height: 50%;
+  }
+  .picOfFooter {
+    width: 3rem;
+  }
+  #wrapperOfContentFooter {
+    margin: 5rem 0 0 0;
+  }
+  #wrapperOfFooterInfo p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  #btnSignIn {
+    display: none;
+  }
+  #userIcon {
+    width: 3rem;
+    padding: 0.2rem 0.5rem;
+    display: block;
+  }
+  #wrapperOfBannerPart {
+    flex-direction: column;
+  }
+  #bannerPic {
+    width: 90%;
+    height: 50%;
+  }
+  #wrapperOfBannerText {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 506px) {
+  .picOfFooter {
+    width: 2.5rem;
+  }
+  #wrapperOfContentFooter {
+    margin: 3rem 0 0 0;
+  }
+  #wrapperOfFooterInfo p {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #wrapperOfFooterInfo {
+    width: 40%;
+  }
+  #wrapperOfFooterInfo p {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 395px) {
+  #userIcon {
+    width: 2.7rem;
+    padding: 0.25rem 0.5rem;
+    display: block;
+  }
+  #logoPart {
+    width: 3.7rem;
+  }
+  #bannerPic {
+    width: 90%;
+    height: 40%;
+  }
+}
+
+@media screen and (max-width: 355px) {
+  #userIcon {
+    width: 2.6rem;
+    padding: 0.25rem 0.5rem;
+    display: block;
+  }
+  #logoPart {
+    width: 3.6rem;
+  }
+  #menuIcon {
+    display: block;
+    width: 1.6rem;
+  }
+  #wrapperOfFooter {
+    margin: 8rem 0 0 0;
+  }
+  .picOfFooter {
+    width: 2rem;
+  }
+  #wrapperOfContentFooter {
+    margin: 1.7rem 0 0 0;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  #logoPart {
+    display: none;
+  }
+  #menuIcon {
+    margin: 0 1.5rem 0 0;
+  }
+  #bannerPic {
+    width: 90%;
+    height: 30%;
+  }
+}

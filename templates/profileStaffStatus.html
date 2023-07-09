@@ -1,0 +1,63 @@
+{% extends 'base.html' %} {% load static %} {% block linkContent %}
+<link rel="stylesheet" href="{% static 'css/profileStaffStatusStyle.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'css/profileStaffStatusResponsiveStyle.css' %}"
+/>
+{% endblock linkContent %}
+<span></span>
+{% block titleContent %}Home{% endblock titleContent %}
+<span></span>
+{% block mainContent %}
+<div id="wrapperTotalMenuForProfile">
+  <ul id="wrapperMenu">
+    <a href="{% url 'profileStaff' %}"><li>معرفی</li></a>
+    <a href="{% url 'profileStaffStatus' %}" style="color: #aad2fc"
+      ><li>وضعیت درخواست</li></a
+    >
+    <a href="{% url 'profileStaffInfo' %}"><li>اطلاعات کاربری</li></a>
+    <a href="{% url 'profileStaffNewReq' %}"><li>درخواست جدید</li></a>
+    <a href="{% url 'logout' %}" style="color: #ba2c46"><li>خروج</li></a>
+  </ul>
+  <div id="wrapperBodyOfInfo">
+    <table id="wraperTableOfStatus">
+      <tr>
+        <th>شماره درخواست</th>
+        <th>مبدا</th>
+        <th>مقصد</th>
+        <th>نام مشتری</th>
+        <th>شماره همراه مشتری</th>
+        <th>نوع ارسال</th>
+        <th>تاریخ ارسال</th>
+        <th>وضعیت بسته</th>
+      </tr>
+
+      
+      {% for request in user.req_driver.all %}
+        
+      
+        
+      <tr>
+        <td>{{request.id}}</td>
+        <td>{{request.sAddress}}</td>
+        <td>{{request.dAddress}}</td>
+        <td>{{request.user}}</td>
+        <td>{{request.user.phone_no}}</td>
+        <td>{{request.get_type}}</td>
+        <td>{{request.req_date}}</td>
+        {%if request.sended %}
+        <td class="successMessage">ارسال موفق</td>
+        {% else %}
+        <td><form method="post" action='{% url 'reqsended' request.id %}'>
+          {% csrf_token %}
+          <button class="setStatusBtn">ارسال با موفقیت</button>
+        </form></td>
+        {% endif %}
+      </tr>
+
+      {% endfor %}
+
+    </table>
+  </div>
+</div>
+{% endblock mainContent %}

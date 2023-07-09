@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ثبت نام</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}"/>
+</head>
+
+<body>
+<div class="container">
+    <div class="heading">
+        فرم ثبت نام
+    </div>
+    {% if messages %}
+        {% for message in messages %}
+            <div>{{ message }}</div>
+
+        {% endfor %}
+    {% endif %}
+
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="Details">
+            <div class="box">
+                    <span class="details">
+                        نام
+                    </span>
+                {#                <input type="text" placeholder="نام ">#}
+                {{ form.first_name }}
+            </div>
+
+
+            <div class="box">
+                    <span class="details">
+                        رمز ورود
+                    </span>
+                {#                <input type="text" placeholder="رمز ورود  ">#}
+                {{ form.password1 }}
+            </div>
+
+
+            <div class="box">
+                    <span class="details">
+                        نام خانوادگي
+                    </span>
+                {#                <input type="text" placeholder="نام خانوادگي ">#}
+                {{ form.last_name }}
+            </div>
+
+            <div class="box">
+                    <span class="details">
+                        تكرار رمز ورود
+                    </span>
+                {#                <input type="text" placeholder=" تكرار ">#}
+                {{ form.password2 }}
+            </div>
+            <div class="box">
+                    <span class="details">
+                        شماره تماس
+                    </span>
+                {#                <input type="text" placeholder="شماره تماس  ">#}
+                {{ form.phone_no }}
+            </div>
+
+        </div>
+
+        <div class="button">
+            <input type="submit" value="ثبت نام">
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>

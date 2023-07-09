@@ -1,0 +1,164 @@
+:root {
+  --bg-Main: #fff;
+  --bg-Second: #2b4162;
+  --bg-Third: #aad2fc;
+  --btn-Success: #34d6b3;
+  --btn-Warning: #ba2c46;
+}
+
+#wrapperOfBannerPart {
+  margin: 5rem 0 0 0;
+  width: 100%;
+  height: 89vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#bannerPic {
+  width: 60%;
+  height: 80%;
+}
+
+#wrapperOfBannerText {
+  width: 35%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+}
+#wrapperOfBannerText p {
+  color: var(--bg-Second);
+}
+
+#wrapperOfAttr {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 13rem 0 0 0;
+}
+.attrBoxes {
+  border: 2px solid var(--bg-Third);
+  width: 18rem;
+  height: 18rem;
+  box-shadow: 0 0.5px 5px gray;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+}
+.attrBoxes p {
+  color: var(--bg-Second);
+}
+.PicStyle {
+  width: 15rem;
+  margin: -7rem 0 0 0;
+}
+#clockPic {
+  width: 17rem;
+}
+.attrBoxes p {
+  padding: 2rem 0.5rem;
+}
+
+#wrapperOfContent {
+  width: 100%;
+  margin: 10rem 0 0 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.wrapperOfItem {
+  width: 45%;
+  height: 25rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.5px 5px gray;
+  cursor: pointer;
+  display: flex;
+}
+#wrapperOfItemOrder:hover {
+  #contextWrapperOrder {
+    opacity: 100%;
+    transition: 0.5s;
+  }
+}
+#wrapperOfItemCooperation:hover {
+  #contextWrapperCooperation {
+    opacity: 100%;
+    transition: 0.5s;
+  }
+}
+
+.picStyleSecond {
+  width: 100%;
+  height: 100%;
+}
+
+.contextWrapper {
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 45%;
+  position: absolute;
+  z-index: 3;
+  text-align: justify;
+  opacity: 0%;
+  background-color: #2b4162ac;
+  border-radius: 1.5rem;
+  transition: 0.5s;
+}
+#contextWrapperOrder {
+  opacity: 0%;
+  transition: 0.5s;
+}
+#contextWrapperCooperation {
+  opacity: 0%;
+  transition: 0.5s;
+}
+
+.contextWrapper p {
+  padding: 0 2rem;
+  color: var(--bg-Main);
+}
+.contextWrapper h2 {
+  color: var(--bg-Main);
+}
+#contextWrapperOrder a {
+  text-decoration: none;
+  background-color: var(--btn-Success);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5px 5px gray;
+  color: var(--bg-Second);
+  border: 1.5px solid var(--btn-Success);
+  transition: 0.5s;
+}
+#contextWrapperOrder a:hover {
+  background-color: transparent;
+  transition: 0.5s;
+  color: var(--btn-Success);
+}
+
+#contextWrapperCooperation a {
+  text-decoration: none;
+  background-color: var(--btn-Success);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5px 5px gray;
+  color: var(--bg-Second);
+  border: 1.5px solid var(--btn-Success);
+  transition: 0.5s;
+}
+#contextWrapperCooperation a:hover {
+  background-color: transparent;
+  transition: 0.5s;
+  color: var(--btn-Success);
+}

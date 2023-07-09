@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% load static %} {% block linkContent %}
+<link rel="stylesheet" href="{% static 'css/detailsOfVolStyle.css' %}" />
+<!-- <link rel="stylesheet" href="{% static 'css/contactResponsiveStyle.css' %}" /> -->
+{% endblock linkContent %}
+<span></span>
+{% block titleContent %}Contact{% endblock titleContent %}
+<span></span>
+{% block mainContent %}
+<div id="wrapperTotalFormDetail">
+  <div class="wrapperRows">
+    <img src="{{driverinfo.avatar.url}}" id="profileImage" />
+    <img src="{{driverinfo.licence.url}}" id="licenseImage" />
+  </div>
+
+  <div class="wrapperRows">
+    <p class="textOfContent">نام : {{driverinfo.user.first_name}}</p>
+    <p class="textOfContent">نام خانوادگی : {{driverinfo.user.last_name}}</p>
+    <p class="textOfContent">تلفن همراه : {{driverinfo.user.phone_no}}</p>
+  </div>
+
+  <div class="wrapperRows">
+    <p class="textOfContent">کد ملی : {{driverinfo.user.nationalId}}</p>
+    <p class="textOfContent">ایمیل: {{driverinfo.email}}</p>
+    <p class="textOfContent">آدرس : {{driverinfo.address.formated}}</p>
+  </div>
+
+  <div class="wrapperRowsLast">
+    <p class="textOfContentLast">
+      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
+      طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+      که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با
+      هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته
+      حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها
+      شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ
+      پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و
+      دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد
+      نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای
+      موجود طراحی اساسا مورد استفاده قرار گیرد.
+    </p>
+  </div>
+
+  <div class="wrapperRows">
+    <form action="{% url 'acceptdriver' driverinfo.id %}" method="post">
+      {%csrf_token%}
+      <button class="btnStyles" id="submitBtn" type="submit">ثبت رزومه</button>
+    </form>
+    <form action="{% url 'denydriver' driverinfo.id %}" method="post">
+      {%csrf_token%}
+      <button class="btnStyles" id="denyBtn" type="submit">رد رزومه</button>
+    </form>
+  </div>
+</div>
+{% endblock mainContent %}

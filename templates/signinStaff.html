@@ -1,0 +1,96 @@
+{% extends 'base.html' %} {% load static %} {% block linkContent %}
+<link rel="stylesheet" href="{% static 'css/signinStaffStyle.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'css/signinStaffResponsiveStyle.css' %}"
+/>
+{% endblock linkContent %}
+<span></span>
+{% block titleContent %}Home{% endblock titleContent %}
+<span></span>
+{% block mainContent %} {% if messages %}
+<dialog id="dialog" open>
+  <button onclick="dialog.close()">close</button>
+
+  {% for message in messages %}
+  <div>{{ message }}</div>
+
+  {% endfor %}
+</dialog>
+{% endif %}
+<div id="wrapperTotalForm">
+  <form id="wrapperOfForm" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h3>فرم ثبت نام</h3>
+    
+    <div class="wrapperRow">
+      <input
+        type="text"
+        placeholder="تلفن همراه"
+        class="inputStyleTypeOne"
+        name="phone_no"
+        required
+        oninvalid="this.setCustomValidity('این فیلد ضروری است.')"
+      />
+      <input
+        type="email"
+        placeholder="ایمیل"
+        class="inputStyleTypeOne"
+        name="email"
+        title="این فیلد اختیاری است"
+      />
+      <input
+        type="text"
+        placeholder="کد ملی"
+        class="inputStyleTypeOne"
+        name="nationalId"
+        required
+        oninvalid="this.setCustomValidity('این فیلد ضروری است.')"
+      />
+    </div>
+    <div class="wrapperRow">
+      <input
+        type="text"
+        placeholder="آدرس"
+        class="inputStyleTypeTwo"
+        name="address"
+        required
+        oninvalid="this.setCustomValidity('این فیلد ضروری است.')"
+      />
+      <input
+        type="text"
+        placeholder="سابقه کاری"
+        class="inputStyleTypeTwo"
+        name="experience"
+        title="این فیلد اختیاری است"
+      />
+    </div>
+    <div class="wrapperRow">
+      <div class="wrapperInputs">
+        <label>محل بارگذاری عکس پروفایل</label>
+        <input
+          type="file"
+          placeholder=""
+          class="chooseFileBtn"
+          name="avatar"
+          required
+        />
+      </div>
+
+      <div class="wrapperInputs">
+        <label>محل بارگذاری عکس گواهینامه</label>
+        <input
+          type="file"
+          placeholder=""
+          class="chooseFileBtn"
+          name="licence"
+          required
+        />
+      </div>
+    </div>
+    <div class="wrapperRow buttonPart">
+      <button type="submit" id="btnSubmitStyle">ثبت</button>
+    </div>
+  </form>
+</div>
+{% endblock mainContent %}

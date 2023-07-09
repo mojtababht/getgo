@@ -1,0 +1,140 @@
+{% load static %}
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'css/baseStyle.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/responsiveStyle.css' %}"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    {% block linkContent %}{% endblock linkContent %}
+    <title>{% block titleContent %}{% endblock titleContent %}</title>
+</head>
+<body onresize="resizingWindow()">
+<header id="headerPart">
+    <img
+            src="{% static 'image/MenuIcon.svg' %}"
+            id="menuIcon"
+            onclick="clickingMenuBtn()"
+    />
+    <!-- <img src="{% static 'image/cross-svgrepo-com1.svg' %}" id="menuIcon" /> -->
+
+    <ul id="menuPart">
+        <li>
+            <a
+                    href="{% url 'home' %}"
+                    onmouseenter="hoveringMenu(`recOne`)"
+                    onmouseleave="undoHoveringMenu(`recOne`)"
+            >خانه</a
+            >
+            <div class="rec" id="recOne"></div>
+        </li>
+        <li>
+            <a
+                    href="{% url 'signInStaff' %}"
+                    onmouseenter="hoveringMenu(`recTwo`)"
+                    onmouseleave="undoHoveringMenu(`recTwo`)"
+            >ثبت نام پیک</a
+            >
+            <div class="rec" id="recTwo"></div>
+        </li>
+        <li>
+            <a
+                    href="{% url 'about' %}"
+                    onmouseenter="hoveringMenu(`recThree`)"
+                    onmouseleave="undoHoveringMenu(`recThree`)"
+            >درباره ما</a
+            >
+            <div class="rec" id="recThree"></div>
+        </li>
+        <li>
+            <a
+                    href="{% url 'contact' %}"
+                    onmouseenter="hoveringMenu(`recFour`)"
+                    onmouseleave="undoHoveringMenu(`recFour`)"
+            >تماس با ما</a
+            >
+            <div class="rec" id="recFour"></div>
+        </li>
+    </ul>
+
+    <div id="leftPartOfHeader">
+        {% if user.is_authenticated %}
+        
+        {% if user.is_superuser %}
+        
+        <a href="{% url 'profileManagerInfo' %}" id="btnSignIn">پروفایل</a>
+            {% elif user.is_driver %}
+                <a href="{% url 'profileStaff' %}" id="btnSignIn">پروفایل</a>
+            {% else %}
+                <a href="{% url 'profile' %}" id="btnSignIn">پروفایل</a>
+            {% endif %}
+        {% else %}
+            <a><img src="{% static 'image/UserIcon.svg' %}" id="userIcon"/></a>
+            <a href="{% url 'login' %}" id="btnSignIn">ورود / ثبت نام</a>
+        {% endif %}
+        <img
+                src="{% static 'image/Logo2.png' %}"
+                id="logoPart"
+                onclick='location.href="/"'
+        />
+    </div>
+</header>
+
+<div id="wrapperSideMenu">
+    <ul id="sideMenu">
+        <a href="{% url 'home' %}">
+            <li>خانه</li>
+        </a>
+        <a href="{% url 'signInStaff' %}">
+            <li>ثبت نام پیک</li>
+        </a>
+        <a href="{% url 'about' %}">
+            <li>درباره ما</li>
+        </a>
+        <a href="{% url 'contact' %}" style="border-radius: 0 0 0 0.5rem"
+        >
+            <li>تماس با ما</li>
+        </a
+        >
+    </ul>
+</div>
+
+{% block mainContent %} {% endblock mainContent %}
+
+<footer id="wrapperOfFooter">
+    <img src="{% static 'image/Footer.svg' %}" id="footerPart"/>
+    <div id="wrapperOfContentFooter">
+        <div id="wrapperOfFooterInfo">
+            <p>پشتیبانی : 44024 - 021</p>
+            <p>شرکت : 88575160 - 021</p>
+        </div>
+
+        <div id="wrapperOfFooterPic">
+            <img
+                    src="{% static 'image/عضو اتحادیه کشوری.png' %}"
+                    alt=""
+                    class="picOfFooter"
+            />
+            <img
+                    src="{% static 'image/نشان ملی ثبت.png' %}"
+                    alt=""
+                    class="picOfFooter"
+            />
+            <img
+                    src="{% static 'image/نماد اعتماد.png' %}"
+                    alt=""
+                    class="picOfFooter"
+            />
+        </div>
+    </div>
+</footer>
+<script src="{% static 'JS/baseScript.js' %}"></script>
+<script src="{% static 'JS/jquery-3.7.0.min.js' %}"></script>
+<script src="{% static "JS/base.js" %}"></script>
+{% block scriptContent %} {% endblock scriptContent %}
+</body>
+</html>

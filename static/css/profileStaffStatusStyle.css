@@ -1,0 +1,83 @@
+:root {
+  --bg-Main: #fff;
+  --bg-Second: #2b4162;
+  --bg-Third: #aad2fc;
+  --btn-Success: #34d6b3;
+  --btn-Warning: #ba2c46;
+}
+
+#wrapperTotalMenuForProfile {
+  width: 100%;
+  margin: 6rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#wrapperMenu {
+  width: 90%;
+  height: 4rem;
+  background-color: var(--bg-Second);
+  box-shadow: 0 0.5px 5px rgba(128, 128, 128, 0.763);
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  align-items: center;
+}
+#wrapperMenu a {
+  color: var(--bg-Main);
+  text-decoration: none;
+}
+#wrapperMenu a:hover {
+  color: var(--bg-Third);
+}
+
+#wrapperBodyOfInfo {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(219, 219, 219);
+  box-shadow: 0 0.5px 5px rgba(128, 128, 128, 0.763);
+  text-align: justify;
+  line-height: 2.5rem;
+  padding: 0 0 1rem 0;
+}
+
+#wraperTableOfStatus {
+  width: 95%;
+  margin: 2rem 0;
+}
+#wraperTableOfStatus tr {
+  display: flex;
+  justify-content: space-around;
+}
+#wraperTableOfStatus tr th {
+  width: 14.28%;
+  text-align: center;
+}
+
+#wraperTableOfStatus tr td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 14.28%;
+  border-top: 1.5px solid var(--bg-Second);
+}
+.successMessage {
+  color: var(--btn-Success);
+}
+
+.setStatusBtn {
+  background-color: var(--btn-Success);
+  color: var(--bg-Second);
+  font-family: "IranSans";
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 10rem;
+  box-shadow: 0 0.5px 5px gray;
+  margin: 0.2rem;
+}

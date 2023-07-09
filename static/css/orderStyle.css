@@ -1,0 +1,218 @@
+:root {
+  --bg-Main: #fff;
+  --bg-Second: #2b4162;
+  --bg-Third: #aad2fc;
+  --btn-Success: #34d6b3;
+  --btn-Warning: #ba2c46;
+}
+
+#wrapperTotalMap {
+  width: 100%;
+  margin: 7rem 0 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapperMapPic {
+  width: 60%;
+  display: flex;
+  margin: 0 0.5rem 0 0;
+}
+#picMap {
+  width: 100%;
+  height: 62vh;
+  border-radius: 1rem 0 0 1rem;
+  box-shadow: 0 0.5px 5px gray;
+}
+.LocationIcon {
+  width: 2rem;
+  position: absolute;
+  z-index: 3;
+  cursor: pointer;
+}
+#locationOne {
+  margin: 3% 20% 0 0;
+}
+#locationTwo {
+  margin: 15% 40% 0 0;
+}
+
+#wrapperOfMoreInfo {
+  width: 20%;
+  height: 62vh;
+  border: 3px solid var(--bg-Second);
+  margin: 0 0 0 0.5rem;
+  box-shadow: 0 0.5px 5px gray;
+  border-radius: 0 1rem 1rem 0;
+  color: var(--bg-Second);
+}
+
+.wrapperInfoPart {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 20%;
+}
+.wrapperInfoPart p {
+  font-weight: bold;
+}
+#locationIconOne {
+  width: 1.6rem;
+}
+.locationIconInfo {
+  width: 1.5rem;
+}
+
+#wrapperTextContent {
+  background-color: var(--bg-Second);
+  border-radius: 0 0 0.6rem 0;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+
+#wrapperTextContent p,
+h3 {
+  color: var(--bg-Main);
+}
+
+#wrapperOfBoxInfo {
+  width: 100%;
+  margin: 7rem 0 0 0;
+}
+#formPart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#wrapperOfTypeOfDelivery {
+  width: 22%;
+  height: 27vh;
+  border: 3px solid var(--bg-Second);
+  margin: 0 0 0 1.6rem;
+  border-radius: 0 0.8rem 0.8rem 0;
+  box-shadow: 0 0.5px 5px gray;
+}
+#wrapperOfPriceOfBox {
+  border: 3px solid var(--bg-Second);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 27vh;
+  width: 55%;
+  margin: 0 1.6rem 0 0;
+  border-radius: 0.8rem 0 0 0.8rem;
+  box-shadow: 0 0.5px 5px gray;
+  color: var(--bg-Second);
+}
+.wrapperOptions {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.dropdownBtn {
+  width: 80%;
+  height: 50%;
+  cursor: pointer;
+  font-family: "IranSans";
+  border: 1px solid var(--bg-Second);
+  border-radius: 100rem;
+  padding: 0 0.5rem;
+}
+#payBtn {
+  font-family: "IranSans";
+  background-color: var(--btn-Success);
+  border: 1.5px solid var(--btn-Success);
+  color: var(--bg-Second);
+  cursor: pointer;
+  width: 40%;
+  height: 26%;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  box-shadow: 0 0.5px 5px rgba(128, 128, 128, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: 0.3s;
+}
+#boxPic {
+  width: 10%;
+  margin: 0 10rem 0 0;
+}
+#truckPic {
+  width: 10%;
+  transform: rotate(90deg);
+  margin: 0 0 0 14rem;
+}
+
+#payBtn:hover {
+  background: transparent;
+  transition: 0.3s;
+}
+
+#payBtn:hover #boxPic {
+  animation: animationOfBox 5s;
+  animation-iteration-count: 1;
+}
+
+#payBtn:hover #truckPic {
+  animation: animationOfTruck 7s;
+  animation-iteration-count: 1;
+}
+
+@keyframes animationOfTruck {
+  0% {
+    margin: 0 0 0 14rem;
+  }
+  51% {
+    margin: 0 0 0 -1rem;
+  }
+  100% {
+    margin: 0 0 0 14rem;
+  }
+}
+
+@keyframes animationOfBox {
+  0% {
+    margin: 0 10rem 0 0;
+  }
+  51% {
+    margin: 0 0 0 0rem;
+  }
+  100% {
+    margin: 0 0 0 50rem;
+  }
+}
+
+#wrapperPrice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#price {
+  width: 40%;
+  border: none;
+}
+
+#calcprice {
+  cursor: pointer;
+  background-color: var(--bg-Third);
+  border: none;
+  font-family: "IranSans";
+  padding: 0.7rem 0.9rem;
+  border-radius: 0.5rem;
+}
+
+.warning {
+  background-color: var(--btn-Warning);
+  text-align: center;
+  color: var(--bg-Main);
+}

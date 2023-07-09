@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% load static %} {% block linkContent %}
+<link rel="stylesheet" href="{% static 'css/profileManagerVolStyle.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'css/profileStaffStatusResponsiveStyle.css' %}"
+/>
+{% endblock linkContent %}
+<span></span>
+{% block titleContent %}Home{% endblock titleContent %}
+<span></span>
+{% block mainContent %}
+<div id="wrapperTotalMenuForProfile">
+  <ul id="wrapperMenu">
+    <a href="{% url 'profileManagerInfo' %}"><li>اطلاعات کاربری</li></a>
+    <a href="{% url 'profileManagerStatus' %}"><li>وضعیت درخواست</li></a>
+    <a href="{% url 'profileManagerVol' %}" style="color: #aad2fc"
+      ><li>داوطلبان مجموعه</li></a
+    >
+    <a href="{% url 'logout' %}" style="color: #ba2c46"><li>خروج</li></a>
+  </ul>
+  <div id="wrapperBodyOfInfo">
+    <table id="wraperTableOfStatus">
+      <tr>
+        <th>شماره درخواست</th>
+        <th>نام</th>
+        <th>نام خانوادگی</th>
+        <th>کدملی</th>
+        <th>شماره همراه</th>
+        <th>جزییات</th>
+      </tr>
+{% for drreq in drreqs %}
+<tr>
+  <td>{{drreq.driverinfo.id}}</td>
+  <td>{{drreq.first_name}}</td>
+  <td>{{drreq.last_name}}</td>
+  <td>{{drreq.driverinfo.nationalId}}</td>
+  <td>{{drreq.phone_no}}</td>
+  <td><a href="{% url 'detailsOfVol' drreq.driverinfo.id %}" class="detailBtn" style="text-decoration: none; color:black">جزییات</a></td>
+</tr>
+{% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock mainContent %}

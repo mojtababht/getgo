@@ -1,0 +1,90 @@
+{% extends 'base.html' %} {% load static %} {% block linkContent %}
+<link rel="stylesheet" href="{% static 'css/homeStyle.css' %}" />
+<link rel="stylesheet" href="{% static 'css/homeResponsiveStyle.css' %}" />
+{% endblock linkContent %}
+<span></span>
+{% block titleContent %}Home{% endblock titleContent %}
+<span></span>
+{% block mainContent %} {% if messages %}
+<dialog id="dialog" open>
+  <button onclick="dialog.close()">close</button>
+
+  {% for message in messages %}
+  <div>{{ message }}</div>
+
+  {% endfor %}
+</dialog>
+{% endif %}
+<div id="wrapperOfBannerPart">
+  <div id="wrapperOfBannerText">
+    <p>
+      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
+      طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+      که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با
+      هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته
+      حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها
+    </p>
+  </div>
+  <img src="{% static 'image/Banner.png' %}" id="bannerPic" />
+</div>
+
+<div id="wrapperOfAttr">
+  <div class="attrBoxes">
+    <img src="{% static 'image/easyPic.png' %}" alt="" class="PicStyle" />
+    <h2>آسان</h2>
+    <p>
+      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
+      طراحان گرافیک است،
+    </p>
+  </div>
+  <div class="attrBoxes">
+    <img
+      src="{% static 'image/fastPic.png' %}"
+      class="PicStyle"
+      id="clockPic"
+    />
+    <h2>سریع</h2>
+    <p>
+      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
+      طراحان گرافیک است،
+    </p>
+  </div>
+  <div class="attrBoxes" id="boxOfMoney">
+    <img src="{% static 'image/moneyPic.png' %}" class="PicStyle" />
+    <h2>به صرفه</h2>
+    <p>
+      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
+      طراحان گرافیک است،
+    </p>
+  </div>
+</div>
+
+<div id="wrapperOfContent">
+  <div class="wrapperOfItem" id="wrapperOfItemOrder">
+    <img src="{% static 'image/orderPic.png' %}" class="picStyleSecond" />
+    <div class="contextWrapper" id="contextWrapperOrder">
+      <h2>درخواست پیک</h2>
+      <p>
+        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
+        از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
+        سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای
+        متنوع با هدف بهبود ابزارهای کاربردی می باشد
+      </p>
+      <a href="{% url 'order' %}">همین الان پیک میخوام</a>
+    </div>
+  </div>
+  <div class="wrapperOfItem" id="wrapperOfItemCooperation">
+    <img src="{% static 'image/CooperationPc.png' %}" class="picStyleSecond" />
+    <div class="contextWrapper" id="contextWrapperCooperation">
+      <h2>چگونه عضو مجموعه شوید ؟</h2>
+      <p>
+        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
+        از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
+        سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای
+        متنوع با هدف بهبود ابزارهای کاربردی می باشد
+      </p>
+      <a href="{% url 'signInStaff' %}">میخوام عضو شم</a>
+    </div>
+  </div>
+</div>
+{% endblock mainContent %}

@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ثبت نام</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}"/>
+</head>
+
+<body>
+<div class="container">
+    <div class="heading">
+        ورود
+    </div>
+    {% if form.errors %}
+
+        <div>شماره تلفن یا رمز عبور نادرست میباشد</div>
+
+
+    {% endif %}
+
+    <form method="post" >
+        {% csrf_token %}
+        <div class="Details" style="align-items: center">
+            <div class="box">
+                    <span class="details">
+                        شماره تلفن
+                    </span>
+{#                <input type="text" placeholder="نام ">#}
+                {{ form.username }}
+            </div>
+            <div class="box">
+                    <span class="details">
+                        رمز ورود
+                    </span>
+{#                <input type="text" placeholder="رمز ورود  ">#}
+                {{ form.password }}
+            </div>
+        </div>
+
+        <p>حساب کاربری ندارید؟ از <a href="{% url 'signup' %}">اینجا </a>ثبت نام کنید</p>
+        <div class="button">
+            <input type="submit" value=" ورود">
+
+        </div>
+
+    </form>
+</div>
+</body>
+</html>

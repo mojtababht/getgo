@@ -1,0 +1,102 @@
+:root {
+  --bg-Main: #fff;
+  --bg-Second: #2b4162;
+  --bg-Third: #aad2fc;
+  --btn-Success: #34d6b3;
+  --btn-Warning: #ba2c46;
+}
+
+#wrapperTotalForm {
+  width: 100%;
+  margin: 6rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#wrapperOfForm {
+  width: 95%;
+  height: 30rem;
+  background-color: rgb(219, 219, 219);
+  color: var(--bg-Second);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.wrapperRow {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputStyleTypeOne {
+  height: 3rem;
+  width: 30%;
+  background-color: transparent;
+  border: 1.5px solid var(--bg-Second);
+  color: var(--bg-Second);
+  border-radius: 0.5rem;
+  padding: 0 1rem 0 0;
+  font-family: "IranSans";
+}
+.inputStyleTypeOne::placeholder {
+  color: var(--bg-Second);
+}
+
+.inputStyleTypeThree {
+  height: 3rem;
+  width: 45%;
+  background-color: transparent;
+  border: 1.5px solid var(--bg-Second);
+  color: var(--bg-Second);
+  border-radius: 0.5rem;
+  padding: 0 1rem 0 0;
+  font-family: "IranSans";
+}
+.inputStyleTypeThree::placeholder {
+  color: var(--bg-Second);
+}
+
+.inputStyleTypeTwo {
+  height: 3rem;
+  width: 45%;
+  background-color: transparent;
+  border: 1.5px solid var(--bg-Second);
+  color: var(--bg-Second);
+  border-radius: 0.5rem;
+  padding: 0 1rem 0 0;
+  font-family: "IranSans";
+}
+.inputStyleTypeTwo::placeholder {
+  color: var(--bg-Second);
+}
+
+.wrapperInputs {
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#btnSubmitStyle {
+  text-decoration: none;
+  color: var(--bg-Second);
+  background-color: var(--btn-Success);
+  padding: 0.6rem 7rem;
+  border: 1.5px solid var(--btn-Success);
+  border-radius: 0.4rem;
+  box-shadow: 0 0.5px 5px gray;
+  transition: 0.3s;
+  cursor: pointer;
+  font-family: "IranSans";
+}
+#btnSubmitStyle:hover {
+  background-color: transparent;
+  color: var(--btn-Success);
+  transition: 0.3s;
+}
+
+.buttonPart {
+  justify-content: center;
+}

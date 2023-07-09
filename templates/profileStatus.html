@@ -1,0 +1,56 @@
+{% extends 'base.html' %} {% load static %} {% block linkContent %}
+<link rel="stylesheet" href="{% static 'css/profileStatusStyle.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'css/profileStatusResponsiveStyle.css' %}"
+/>
+{% endblock linkContent %}
+<span></span>
+{% block titleContent %}profile{% endblock titleContent %}
+<span></span>
+{% block mainContent %}
+<div id="wrapperTotalMenuForProfile">
+  <ul id="wrapperMenu">
+    <a href="{% url 'profile' %}"><li>معرفی</li></a>
+    <a href="{% url 'profileStatus' %}" style="color: #aad2fc">
+      <li>وضعیت ارسال</li>
+    </a>
+    <a href="{% url 'profileInfo' %}"><li>اطلاعات کاربری</li></a>
+    <a href="{% url 'logout' %}" style="color: #ba2c46"><li>خروج</li></a>
+  </ul>
+  <div id="wrapperBodyOfInfo">
+    <table id="wraperTableOfStatus">
+      <tr>
+        <th>شماره درخواست</th>
+        <th>مبدا</th>
+        <th>مقصد</th>
+        <th>نام پیک</th>
+        <th>نوع ارسال</th>
+        <th>تاریخ درخواست</th>
+        <th>وضعیت بسته</th>
+      </tr>
+      {% for request in user.request_set.all %}
+
+      <tr>
+        <td>{{ request.id }}</td>
+        <td>{{ request.sAddress.name }}</td>
+        <td>{{ request.dAddress.name }}</td>
+        <td>
+          {% if request.req_driver %}{{ request.req_driver }}{% else %}در انتظار
+          قبول درخواست {% endif %}
+        </td>
+        <td>{{ request.get_type }}</td>
+        <td>{{ request.req_date }}</td>
+        {% if request.sended %}
+        <td class="successMessage">ارسال موفق</td>
+
+        {% else %}
+
+        <td class="unsuccessMessage">در مسیر مقصد</td>
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock mainContent %}

@@ -1,0 +1,79 @@
+{% extends 'base.html' %} {% load static %} {% block linkContent %}
+<link rel="stylesheet" href="{% static 'css/orderStyle.css' %}" />
+<link rel="stylesheet" href="{% static 'css/orderResponsiveStyle.css' %}" />
+{% endblock linkContent %}
+<span></span>
+{% block titleContent %}Order{% endblock titleContent %}
+<span></span>
+{% block mainContent %}
+<!-- Map -->
+<div id="wrapperTotalMap">
+  <di id="wrapperOfMoreInfo">
+    <div id="totalWrapperContext">
+      <div class="wrapperInfoPart">
+        <p>مبدا</p>
+        <img
+          src="{% static 'image/LocationIcon1.png' %}"
+          class="locationIconInfo"
+          id="locationIconOne"
+        />
+      </div>
+      <div class="wrapperInfoPart">
+        <p>مقصد</p>
+        <img
+          src="{% static 'image/LocationIcon2.png' %}"
+          class="locationIconInfo"
+        />
+      </div>
+    </div>
+
+    <div id="wrapperTextContent">
+      <h3>راهنمایی :</h3>
+      <p>برای تغییر آدرس علامت های مبدا و مقصد را روی نقشه حرکت دهید</p>
+    </div>
+  </di>
+  <div class="wrapperMapPic" id="map" style="z-index: 0"></div>
+</div>
+
+<div id="wrapperOfBoxInfo">
+  <form id="formPart" method="post">
+    {% csrf_token %}
+    <div id="wrapperOfTypeOfDelivery">
+      <div class="wrapperOptions">
+        <p>نوع ارسال :</p>
+        {{ reqform.type }}
+      </div>
+
+      <div class="wrapperOptions">
+        <p>اندازه بسته</p>
+        {{ pacform.weight }}
+      </div>
+    </div>
+    <div id="wrapperOfPriceOfBox">
+      <h3 style="color: #2b4162">مبلغ نهایی :</h3>
+      <p id="wrapperPrice">
+        <input type="text" readonly id="price" name="price" /> تومان
+        <button type="button" id="calcprice">محاسبه قیمت</button>
+      </p>
+      <button
+        type="submit"
+        id="payBtn"
+        onmouseenter="textOfBtnEnterMouse()"
+        onmouseleave="textOfBtnLeaveMouse()"
+      >
+        <!-- <img src="../static/image/box1.png" id="truckPic" /> -->
+        پرداخت
+        <!-- <img src="{% static 'image/box1.png' %}" id="boxPic" /> -->
+      </button>
+    </div>
+    <input type="hidden" name="slat" id="slat" />
+    <input type="hidden" name="slong" id="slong" />
+    <input type="hidden" name="dlat" id="dlat" />
+    <input type="hidden" name="dlong" id="dlong" />
+  </form>
+</div>
+{% endblock mainContent %}
+<span></span>
+{% block scriptContent %}
+<script src="{% static 'JS/orderScripts.js' %}"></script>
+{% endblock scriptContent %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}{% load static %} {% block linkContent %}
+<link rel="stylesheet" href="{% static 'css/aboutStyle.css' %}" />
+<link rel="stylesheet" href="{% static 'css/aboutResponsiveStyle.css' %}" />
+{% endblock linkContent %}
+<span></span>
+{% block titleContent %}About{% endblock titleContent %}
+<span></span>
+{% block mainContent %}
+<div id="wrapperTotal">
+  <div id="wrapperOfAboutContent">
+    <div id="wrapperOfAboutText">
+      <h2>درباره ما</h2>
+      <p>
+        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
+        از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
+        سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای
+        متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
+        درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با
+        نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
+        خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد،
+      </p>
+    </div>
+  </div>
+</div>
+
+{% endblock mainContent %}
